@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos de mesa</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .bg-image {
+            background-image: url('imagen2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            padding: 20px; /* Espacio alrededor del contenido para que no esté pegado al borde */
+            color: white;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .descripcion {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .formulario {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .input-field {
+            margin-bottom: 10px;
+        }
+
+        .input-field input[type="email"],
+        .input-field input[type="tel"] {
+            width: calc(50% - 10px);
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-field input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .input-field input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image">
+        <div class="titulo">Juegos de mesa </BR>Inacap</div>
+        <div class="descripcion">¡Únete a nosotros para disfrutar de momentos llenos de diversión, competencias, estrategia y trabajo en equipo!</div>
+        
+        <div class="formulario">
+            <form id="contactoForm" action="#" method="post">
+                <div class="input-field">
+                    <input type="email" id="emailInput" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="input-field">
+                    <input type="tel" id="telefonoInput" name="telefono" placeholder="Teléfono" required>
+                </div>
+                <div class="input-field">
+                    <input type="submit" id="submitButton" value="Mandar Contacto">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("contactoForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            var email = document.getElementById("emailInput").value;
+            var telefono = document.getElementById("telefonoInput").value;
+
+           
+            document.getElementById("emailInput").value = "";
+            document.getElementById("telefonoInput").value = "";
+
+            
+            setTimeout(function() {
+                
+                var submitButton = document.getElementById("submitButton");
+                submitButton.value = "Contacto enviado";
+
+          
+                setTimeout(function() {
+                    submitButton.value = "Mandar Contacto";
+                }, 3000); // 3 segundos
+            }, 1000); // 1 segundo
+        });
+    </script>
+</body>
+</html>
